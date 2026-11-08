@@ -4,7 +4,7 @@
 
 A plugin for [Claude Code](https://claude.com/claude-code) that turns the time you spend waiting on an agent into active learning. The agent critiques your request, builds in the background, and streams a short lesson about the change into a live dashboard: predict-first questions, concept notes grounded in your own code, a walkthrough of the diff, and flashcards that come back just before you would forget them.
 
-![The live lesson in the dashboard while Claude builds](docs/images/live.jpg)
+![The live lesson in the dashboard while Claude builds](https://raw.githubusercontent.com/babakhalid/learn-with-claude/main/docs/images/live.jpg)
 
 ---
 
@@ -176,11 +176,11 @@ A local web page at `http://127.0.0.1:4477`. It opens once per session and updat
 | **Lessons** | Every task you built in teach mode, with its critique and changes. |
 | **Progress** | A personal summary, questions answered over 14 days, topics from weakest to strongest, and memory strength of your flashcards. |
 
-![Progress: a personal summary and questions answered over the last 14 days](docs/images/progress.jpg)
+![Progress: a personal summary and questions answered over the last 14 days](https://raw.githubusercontent.com/babakhalid/learn-with-claude/main/docs/images/progress.jpg)
 
-![Topics, weakest first, and memory strength](docs/images/progress-topics.jpg)
+![Topics, weakest first, and memory strength](https://raw.githubusercontent.com/babakhalid/learn-with-claude/main/docs/images/progress-topics.jpg)
 
-![Quiz: passed, to retry, and new questions, by lesson](docs/images/quiz.jpg)
+![Quiz: passed, to retry, and new questions, by lesson](https://raw.githubusercontent.com/babakhalid/learn-with-claude/main/docs/images/quiz.jpg)
 
 The header shows what each coding session is doing: working, finished, or waiting for you, with the question it asked. A notification appears when that changes, and a browser notification if the tab is in the background. The dashboard follows your system's light or dark theme, and the toggle at the bottom of the side rail overrides it.
 
@@ -249,4 +249,4 @@ Issues and pull requests are welcome.
 
 ## License
 
-[MIT](LICENSE). The dashboard bundles the [Geist](https://github.com/vercel/geist-font) and Geist Mono typefaces under the [SIL Open Font License 1.1](mcp/fonts/OFL.txt).
+[MIT](https://github.com/babakhalid/learn-with-claude/blob/main/LICENSE). The dashboard bundles the [Geist](https://github.com/vercel/geist-font) and Geist Mono typefaces under the [SIL Open Font License 1.1](https://github.com/babakhalid/learn-with-claude/blob/main/mcp/fonts/OFL.txt).

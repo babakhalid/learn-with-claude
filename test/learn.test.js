@@ -274,6 +274,11 @@ test('progress insights: topics weakest first, fixed mistakes, memory buckets; q
 });
 
 test('manifests are valid JSON and reference existing files', () => {
+  const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
+  const plugin = JSON.parse(fs.readFileSync(path.join(ROOT, '.claude-plugin/plugin.json'), 'utf8'));
+  assert.equal(plugin.version, pkg.version, 'npm and plugin versions must match');
+  const readme = fs.readFileSync(path.join(ROOT, 'README.md'), 'utf8');
+  assert.ok(!/\]\((?!https?:|#)[^)]+\)/.test(readme), 'README links must be absolute so they work on npmjs.com');
   for (const f of ['.claude-plugin/plugin.json', '.claude-plugin/marketplace.json', 'hooks/hooks.json']) {
     JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
   }

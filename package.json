@@ -1,6 +1,6 @@
 {
   "name": "learn-with-claude",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Claude Code plugin that turns waiting on the agent into active learning: critique, parallel lessons, quizzes and spaced repetition.",
   "license": "MIT",
   "author": "Khalid Baba",

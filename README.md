@@ -245,6 +245,12 @@ claude plugin validate .
 
 When you add or remove a hook in `hooks/hooks.json`, bump `HOOKS_VERSION` in `hooks/context.js` and the `--hooks=N` tag on every hook command. Claude Code reads the hook list once per session, and the tag stops sessions started with an older list from reporting a status they can't finish.
 
+To release a new version, bump `version` in both `package.json` and `.claude-plugin/plugin.json`, commit, then push a tag. GitHub Actions publishes it to npm through trusted publishing:
+
+```
+git tag v0.1.2 && git push origin v0.1.2
+```
+
 Issues and pull requests are welcome.
 
 ## License

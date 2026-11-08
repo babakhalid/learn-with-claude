@@ -1,0 +1,16 @@
+{
+  "name": "learn-with-claude",
+  "owner": {
+    "name": "Khalid Baba"
+  },
+  "metadata": {
+    "description": "Learn what your coding agent changes, while it changes it."
+  },
+  "plugins": [
+    {
+      "name": "learn-with-claude",
+      "source": "./",
+      "description": "Teach-while-building: critique, parallel quizzes, flashcards and spaced repetition while the agent codes."
+    }
+  ]
+}

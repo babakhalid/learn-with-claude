@@ -1,0 +1,37 @@
+{
+  "name": "learn-with-claude",
+  "version": "0.1.0",
+  "description": "Turn coding agents into tutors: they build, critique, and quiz you in parallel so you remember what changed.",
+  "license": "MIT",
+  "private": true,
+  "bin": {
+    "learn": "mcp/cli.js"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "dashboard": "node mcp/cli.js dashboard",
+    "demo": "rm -rf ${TMPDIR:-/tmp}/learn-demo && LEARN_HOME=${TMPDIR:-/tmp}/learn-demo LEARN_PORT=4499 node mcp/cli.js dashboard & sleep 1 && LEARN_HOME=${TMPDIR:-/tmp}/learn-demo node test/seed-demo.js --live --history; wait"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "author": "Khalid Baba",
+  "homepage": "https://github.com/babakhalid/learn-with-claude#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babakhalid/learn-with-claude.git"
+  },
+  "bugs": {
+    "url": "https://github.com/babakhalid/learn-with-claude/issues"
+  },
+  "keywords": [
+    "claude-code",
+    "codex",
+    "plugin",
+    "learning",
+    "spaced-repetition",
+    "flashcards",
+    "quiz",
+    "mcp"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "learn-with-claude",
+  "version": "0.1.0",
+  "description": "Teach-while-building: the agent critiques your request, does the work in parallel, and keeps you actively learning with prediction questions, graded quizzes, diff walkthroughs and spaced-repetition flashcards.",
+  "author": {
+    "name": "Khalid Baba"
+  },
+  "license": "MIT",
+  "keywords": [
+    "learning",
+    "education",
+    "flashcards",
+    "spaced-repetition",
+    "quiz",
+    "teaching"
+  ],
+  "mcpServers": {
+    "learn": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/mcp/server.js"
+      ]
+    }
+  },
+  "homepage": "https://github.com/babakhalid/learn-with-claude",
+  "repository": "https://github.com/babakhalid/learn-with-claude"
+}

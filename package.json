@@ -3,18 +3,6 @@
   "version": "0.1.0",
   "description": "A Claude Code plugin that turns waiting on the agent into active learning: critique, parallel lessons, quizzes and spaced repetition.",
   "license": "MIT",
-  "private": true,
-  "bin": {
-    "learn": "mcp/cli.js"
-  },
-  "scripts": {
-    "test": "node --test test/*.test.js",
-    "dashboard": "node mcp/cli.js dashboard",
-    "demo": "rm -rf ${TMPDIR:-/tmp}/learn-demo && LEARN_HOME=${TMPDIR:-/tmp}/learn-demo LEARN_PORT=4499 node mcp/cli.js dashboard & sleep 1 && LEARN_HOME=${TMPDIR:-/tmp}/learn-demo node test/seed-demo.js --live --history; wait"
-  },
-  "engines": {
-    "node": ">=18"
-  },
   "author": "Khalid Baba",
   "homepage": "https://github.com/babakhalid/learn-with-claude#readme",
   "repository": {
@@ -32,5 +20,26 @@
     "flashcards",
     "quiz",
     "mcp"
-  ]
+  ],
+  "bin": {
+    "learn-with-claude": "mcp/cli.js"
+  },
+  "files": [
+    ".claude-plugin/",
+    "agents/",
+    "commands/",
+    "hooks/",
+    "mcp/",
+    "skills/",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "dashboard": "node mcp/cli.js dashboard",
+    "demo": "rm -rf ${TMPDIR:-/tmp}/learn-demo && LEARN_HOME=${TMPDIR:-/tmp}/learn-demo LEARN_PORT=4499 node mcp/cli.js dashboard & sleep 1 && LEARN_HOME=${TMPDIR:-/tmp}/learn-demo node test/seed-demo.js --live --history; wait"
+  },
+  "engines": {
+    "node": ">=18"
+  }
 }

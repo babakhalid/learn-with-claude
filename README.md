@@ -123,14 +123,25 @@ Want to try this end to end? Use a small project with real problems to fix, such
 
 ## Install
 
-Requires Node.js 18 or later. There is nothing to `npm install`: the plugin has no dependencies.
+Requires Node.js 18 or later and [Claude Code](https://claude.com/claude-code). The plugin has no dependencies.
+
+**With npm** (recommended):
+
+```
+npm install -g learn-with-claude
+learn-with-claude install
+```
+
+The package registers itself as a Claude Code plugin, so `npm update -g learn-with-claude` also updates the plugin. You also get the `learn-with-claude` command in your terminal (see [Usage](#usage)).
+
+**From inside Claude Code:**
 
 ```
 /plugin marketplace add babakhalid/learn-with-claude
 /plugin install learn-with-claude@learn-with-claude
 ```
 
-Restart Claude Code. Teach mode is on (`sidecar`) by default.
+Either way, restart Claude Code. Teach mode is on (`sidecar`) by default. To remove it, run `learn-with-claude uninstall` or `/plugin uninstall learn-with-claude@learn-with-claude`; your lessons and cards are kept.
 
 ## Usage
 
@@ -144,11 +155,14 @@ Ask for changes as usual. Teach mode starts on its own for anything worth learni
 | `/learn-with-claude:progress` | stats, and opens the dashboard |
 | `/learn-with-claude:mode <mode>` | change the mode (see [Modes](#modes)) |
 
-You can also run the dashboard on its own:
+From the terminal (installed with npm):
 
-```
-node mcp/cli.js dashboard
-```
+| Command | What it does |
+|---|---|
+| `learn-with-claude dashboard` | open the dashboard on its own |
+| `learn-with-claude stats` | your progress, including topics that need work (`--json` for raw data) |
+| `learn-with-claude due` | flashcards due for review |
+| `learn-with-claude mode <mode>` | show or set the teach mode |
 
 ## The dashboard
 

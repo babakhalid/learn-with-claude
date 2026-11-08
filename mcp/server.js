@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // "learn" MCP server (stdio, newline-delimited JSON-RPC). Zero dependencies.
-// Works with Claude Code, Codex, and any MCP client.
+// Ships with the learn-with-claude Claude Code plugin; speaks plain MCP over stdio.
 'use strict';
 
 const readline = require('readline');

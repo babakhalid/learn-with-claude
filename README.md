@@ -1,8 +1,8 @@
 # Learn with Claude
 
-**Learn what your coding agent changes, while it changes it.**
+**Learn what Claude changes, while it changes it.**
 
-A plugin for [Claude Code](https://claude.com/claude-code) and [Codex](https://developers.openai.com/codex) that turns the time you spend waiting on an agent into active learning. The agent critiques your request, builds in the background, and streams a short lesson about the change into a live dashboard: predict-first questions, concept notes grounded in your own code, a walkthrough of the diff, and flashcards that come back just before you would forget them.
+A plugin for [Claude Code](https://claude.com/claude-code) that turns the time you spend waiting on an agent into active learning. The agent critiques your request, builds in the background, and streams a short lesson about the change into a live dashboard: predict-first questions, concept notes grounded in your own code, a walkthrough of the diff, and flashcards that come back just before you would forget them.
 
 ![The live lesson in the dashboard while Claude builds](docs/images/live.jpg)
 
@@ -125,8 +125,6 @@ Want to try this end to end? Use a small project with real problems to fix, such
 
 Requires Node.js 18 or later. There is nothing to `npm install`: the plugin has no dependencies.
 
-### Claude Code
-
 ```
 /plugin marketplace add babakhalid/learn-with-claude
 /plugin install learn-with-claude@learn-with-claude
@@ -134,29 +132,17 @@ Requires Node.js 18 or later. There is nothing to `npm install`: the plugin has 
 
 Restart Claude Code. Teach mode is on (`sidecar`) by default.
 
-### Codex
-
-```
-git clone https://github.com/babakhalid/learn-with-claude.git
-cd learn-with-claude
-./codex/install.sh
-```
-
-The installer registers the `learn` MCP server in `~/.codex/config.toml`, installs the `learn-with-claude-*` skills into `~/.agents/skills`, and adds teach-mode instructions to `~/.codex/AGENTS.md`. It is safe to re-run after `git pull`.
-
-Codex has no background subagents, so it writes the lesson to the dashboard itself, before and after the work.
-
 ## Usage
 
 Ask for changes as usual. Teach mode starts on its own for anything worth learning from.
 
-| Claude Code | Codex | What it does |
-|---|---|---|
-| just ask for a change | just ask for a change | teach mode starts automatically |
-| `/learn-with-claude:teach <task>` | `$learn-with-claude-teach <task>` | force teach mode for one task |
-| `/learn-with-claude:review [topic]` | `$learn-with-claude-review` | a two-minute spaced-repetition review in the chat |
-| `/learn-with-claude:progress` | `$learn-with-claude-progress` | stats, and opens the dashboard |
-| `/learn-with-claude:mode <mode>` | `node mcp/cli.js mode <mode>` | change the mode (see [Modes](#modes)) |
+| Command | What it does |
+|---|---|
+| just ask for a change | teach mode starts automatically |
+| `/learn-with-claude:teach <task>` | force teach mode for one task |
+| `/learn-with-claude:review [topic]` | a two-minute spaced-repetition review in the chat |
+| `/learn-with-claude:progress` | stats, and opens the dashboard |
+| `/learn-with-claude:mode <mode>` | change the mode (see [Modes](#modes)) |
 
 You can also run the dashboard on its own:
 
@@ -197,7 +183,6 @@ The header shows what each coding session is doing: working, finished, or waitin
 
 ```
 .claude-plugin/          Claude Code manifest and marketplace
-.codex-plugin/           Codex manifest
 skills/teach/            the teaching protocol: calibrate, critique, then sidecar, inline or light
 skills/review/           spaced-repetition review in the chat
 skills/progress/         stats and dashboard
@@ -208,7 +193,6 @@ hooks/                   session start, prompt reminders, and live status (Stop,
 mcp/server.js            the "learn" MCP server: lessons, quizzes graded server-side, flashcards, scheduling
 mcp/store.js             storage and the SM-2-style scheduler
 mcp/dashboard.*          the local web dashboard
-codex/                   Codex installer and AGENTS.md instructions
 ```
 
 A few design choices worth knowing:

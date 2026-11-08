@@ -12,8 +12,8 @@ Task: $ARGUMENTS (if empty, use the user's latest request).
 
 ## Tools and agents
 
-- **`learn` MCP tools** (in Claude Code: `mcp__plugin_learn-with-claude_learn__<tool>`): `create_lesson`, `add_learning_items`, `answer_quiz`, `complete_lesson`, `open_dashboard`, `get_progress`.
-- **Subagents** (Claude Code): `learn-with-claude:builder` writes the code and always runs in the background. `learn-with-claude:teacher` runs on Sonnet, is read-only, and writes the lesson into the dashboard.
+- **`learn` MCP tools** (`mcp__plugin_learn-with-claude_learn__<tool>`): `create_lesson`, `add_learning_items`, `answer_quiz`, `complete_lesson`, `open_dashboard`, `get_progress`.
+- **Subagents:** `learn-with-claude:builder` writes the code and always runs in the background. `learn-with-claude:teacher` runs on Sonnet, is read-only, and writes the lesson into the dashboard.
 - If the MCP server is unavailable, do the work normally and tell the user once that teach mode is off because the learn server isn't connected.
 
 ## 1. Calibrate (always)
@@ -52,8 +52,6 @@ This is the one part of teaching that belongs in the session, because it changes
 
 **Later answers.** The prompt hook tells you when the user answers questions in the dashboard. If they missed something, add **one** clarifying sentence at the end of your next reply. Don't re-teach the lesson.
 
-**No background subagents (e.g. Codex):** do the work yourself in chunks. Before the first chunk, add the concept notes and `predict` questions yourself with `add_learning_items`. After the work, add the walkthrough, diff questions, and flashcards. Never wait for answers; the user answers in the dashboard.
-
 ## 3b. Inline flow (`inline` mode, for users who want everything in the terminal)
 
 Same as sidecar, except the main thread asks the questions in the session:
@@ -71,7 +69,6 @@ Same as sidecar, except the main thread asks the questions in the session:
   4. Save 2–5 flashcards.
   5. Call `complete_lesson`.
   6. Post the recap.
-- **No question tool (e.g. Codex):** print options A–D, then end your turn and wait for the answer.
 
 ## 3c. Light flow (`light` mode, or Small tasks)
 

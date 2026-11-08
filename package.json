@@ -1,7 +1,7 @@
 {
   "name": "learn-with-claude",
   "version": "0.1.0",
-  "description": "Turn coding agents into tutors: they build, critique, and quiz you in parallel so you remember what changed.",
+  "description": "A Claude Code plugin that turns waiting on the agent into active learning: critique, parallel lessons, quizzes and spaced repetition.",
   "license": "MIT",
   "private": true,
   "bin": {
@@ -26,7 +26,6 @@
   },
   "keywords": [
     "claude-code",
-    "codex",
     "plugin",
     "learning",
     "spaced-repetition",

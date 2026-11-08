@@ -274,7 +274,7 @@ test('progress insights: topics weakest first, fixed mistakes, memory buckets; q
 });
 
 test('manifests are valid JSON and reference existing files', () => {
-  for (const f of ['.claude-plugin/plugin.json', '.claude-plugin/marketplace.json', '.codex-plugin/plugin.json', 'hooks/hooks.json']) {
+  for (const f of ['.claude-plugin/plugin.json', '.claude-plugin/marketplace.json', 'hooks/hooks.json']) {
     JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
   }
   for (const s of ['teach', 'review', 'progress']) {
